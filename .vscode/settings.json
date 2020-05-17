@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "week_rocket",
+            "dialect": "MySQL",
+            "name": "mysql08",
+            "password": "12345",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
