@@ -27,8 +27,8 @@ class User extends Model {
   teams() {
     return this.belongsToMany("App/Models/Team").pivotModel(
       "App/Models/UserTeam"
-    );
-  }
+    )
+  };
 }
 
 module.exports = User;
