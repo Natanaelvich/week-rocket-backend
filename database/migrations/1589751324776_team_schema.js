@@ -7,6 +7,20 @@ class TeamSchema extends Schema {
   up () {
     this.create('teams', (table) => {
       table.increments()
+      table.string('name').notNullable()
+      table
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
+      table
+        .string('slug')
+        .notNullable()
+        .unique()
       table.timestamps()
     })
   }
