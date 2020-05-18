@@ -12,3 +12,6 @@ database/*.sqlite
 
 #locks
 yarn.lock
+
+#configs
+.vscode
