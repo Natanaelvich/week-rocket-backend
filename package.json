@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "node ace test",
-    "dev": "adonis serve --dev"
+    "dev": "adonis serve --dev",
+    "kue": "adonis kue:listen"
   },
   "keywords": [
     "adonisjs",
@@ -26,6 +27,9 @@
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/lucid-slugify": "^1.0.3",
+    "@adonisjs/mail": "^3.0.10",
+    "@adonisjs/redis": "^2.0.7",
+    "adonis-kue": "^5.0.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {

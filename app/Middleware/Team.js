@@ -20,7 +20,6 @@ class Team {
 
     if (slug) {
       team = await auth.user.teams().where('slug', slug).first()
-      console.log(team)
     }
     if (!team) {
       return response.status(401).send()
