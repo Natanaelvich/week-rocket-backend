@@ -36,27 +36,21 @@ class User extends Model {
   };
 
   async is (expression) {
-    const team = await this.teamJoins()
-      .where('team_id', this.curentTeam)
-      .first()
+    const team = await this.teamJoins().where('team_id', this.currentTeam).first()
 
     return team.is(expression)
   }
 
   async can (expression) {
-    const team = await this.teamJoins()
-      .where('team_id', this.curentTeam)
-      .first()
+    const team = await this.teamJoins().where('team_id', this.currentTeam).first()
 
-    return team.is(expression)
+    return team.can(expression)
   }
 
-  async scope (required) {
-    const team = await this.teamJoins()
-      .where('team_id', this.curentTeam)
-      .first()
+  async scope (expression) {
+    const team = await this.teamJoins().where('team_id', this.currentTeam).first()
 
-    return team.is(required)
+    return team.scope(expression)
   }
 }
 
