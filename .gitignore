@@ -15,3 +15,6 @@ yarn.lock
 
 #configs
 .vscode
+
+#logs
+debug.log
