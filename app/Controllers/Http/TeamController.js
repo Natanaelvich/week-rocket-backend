@@ -1,5 +1,7 @@
 'use strict'
 
+const Role = use('Adonis/Acl/Role')
+
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -36,6 +38,12 @@ class TeamController {
       ...data,
       user_id: auth.user.id
     })
+
+    const teamJoin = await auth.user.teamJoins().where('team_id', team.id).first()
+
+    const admin = await Role.findBy('slug', 'admnistrador')
+
+    await teamJoin.roles().attach([admin.id])
 
     return team
   }
