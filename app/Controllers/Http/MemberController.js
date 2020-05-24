@@ -17,8 +17,8 @@ class MemberController {
     // )
     const members = await UserTeam.query()
       .where('team_id', request.team.id)
-      .with('roles')
       .with('user')
+      .with('roles')
       .fetch()
 
     return members
@@ -33,7 +33,13 @@ class MemberController {
 
     const teamJoin = await UserTeam.find(params.id)
 
-    await teamJoin.roles().sync(roles)
+    if (!teamJoin) {
+      return teamJoin
+    }
+
+    const response = await teamJoin.roles().sync(roles)
+
+    return response
   }
 }
 
