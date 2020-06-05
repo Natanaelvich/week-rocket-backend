@@ -23,7 +23,8 @@ const providers = [
   '@adonisjs/framework/providers/ViewProvider',
   '@adonisjs/validator/providers/ValidatorProvider',
   'adonis-acl/providers/AclProvider',
-  '@adonisjs/cors/providers/CorsProvider'
+  '@adonisjs/cors/providers/CorsProvider',
+  '@adonisjs/websocket/providers/WsProvider'
 ]
 
 /*
@@ -68,8 +69,6 @@ const aliases = {
 */
 const commands = []
 
-const jobs = [
-  'App/Jobs/InvitationEmail'
-]
+const jobs = ['App/Jobs/InvitationEmail']
 
 module.exports = { providers, aceProviders, aliases, commands, jobs }
