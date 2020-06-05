@@ -11,6 +11,10 @@ class HelloWordController {
         id: 2,
         name: "natan",
       },
+      {
+        id: 3,
+        name: "natassia",
+      },
     ];
     return user;
   }
