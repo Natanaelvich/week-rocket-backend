@@ -16,3 +16,4 @@
 const Ws = use('Ws')
 
 Ws.channel('projects', 'ProjectsCreateController').middleware('auth')
+Ws.channel('teams', 'TeamController').middleware('auth')

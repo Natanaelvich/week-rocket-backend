@@ -14,6 +14,8 @@ class Team extends Model {
       strategy: 'dbIncrement',
       disableUpdates: false
     })
+
+    this.addHook('afterCreate', 'TeamHook.sendWs')
   }
 
   users () {
